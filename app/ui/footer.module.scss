@@ -1,0 +1,42 @@
+@import "@/app/vars";
+
+.footer {
+    padding: 50px 0 30px;
+    background: $main-color;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__navList {
+        display: flex;
+        color: #fff;
+    }
+
+    &__navItem {
+        padding: 0 20px;
+    }
+
+    &__navLink {
+        transition: all .3s;
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    &__socials {
+        display: flex;
+    }
+
+    &__social {
+        padding: 0 20px;
+    }
+
+    &__link {
+    }
+}
+.go-top {
+    &__btn {
+    }
+}

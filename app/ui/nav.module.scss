@@ -1,0 +1,120 @@
+@import '@/app/vars';
+
+
+.nav {
+    background: $main-color;
+    padding: 0 15px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 0 20px 0 rgba(#000, 0.7);
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    &__item {
+        padding: 0 20px;
+        font-size: clamp(14px, 2.5vw, 24px);
+        font-weight: 500;
+        position: relative;
+        &::after {
+            content: "|";
+            position: absolute;
+            right: 0;
+        }
+        &:last-child::after {
+            content: none;
+        }
+        &::before {
+            content: "";
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background: $accent-color;
+            height: 2px;
+            width: 50%;
+            border-radius: 5px;
+            bottom: -5px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            transition: all 0.5s;
+        }
+        &:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__link {
+        position: relative;
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    margin-top: 20px;
+    & span {
+        background: $accent-color;
+        height: 4px;
+        width: 40px;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+    & span::before {
+        content: "";
+        position: absolute;
+        background: $accent-color;
+        height: 4px;
+        width: 40px;
+        top: 13px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+    & span::after {
+        content: "";
+        position: absolute;
+        background: $accent-color;
+        height: 4px;
+        width: 40px;
+        bottom: 13px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+}
+.burger--active {
+    & span {
+        transform: rotate(45deg);
+    }
+    & span::before {
+        transform: rotate(90deg);
+        top: 0;
+    }
+    & span::after {
+        transform: rotate(90deg);
+        top: 0;
+    }
+}
