@@ -36,3 +36,5 @@ lib/placeholder-data.js
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.gitignore
