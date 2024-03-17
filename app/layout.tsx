@@ -3,6 +3,7 @@ import { Pixelify_Sans } from "next/font/google";
 import "@/app/globals.scss";
 import { Nav } from "@/app/ui/nav";
 import { Footer } from "@/app/ui/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Pixelify_Sans({ subsets: ["latin"] });
 
