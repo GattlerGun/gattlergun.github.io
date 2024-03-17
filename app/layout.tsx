@@ -17,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  SpeedInsights;
   return (
     <html lang="en" className="root">
       <body className={inter.className}>
