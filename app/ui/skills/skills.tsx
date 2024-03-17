@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import styles from "@/app/ui/skills/skills.module.scss";
 import { SkillsList } from "@/lib/skills/SkillsList";
+import { Skill } from "./skill";
 
 export function Skills() {
     return (
@@ -13,16 +14,10 @@ export function Skills() {
                         {SkillsList.map((skill) => {
                             return (
                                 <li className={styles.about__item} key={skill.id}>
-                                    <div className={styles.about__img}>
-                                        <Image
-                                            className='svg-icon'
-                                            src={skill.img}
-                                            alt={skill.title}
-                                            width={48}
-                                            height={48}
-                                        />
-                                    </div>
-                                    <p className={styles.about__text}>{skill.title}</p>
+                                    <Skill
+                                        title={skill.title}
+                                        img={skill.img}
+                                    />
                                 </li>
                             )
                         })}

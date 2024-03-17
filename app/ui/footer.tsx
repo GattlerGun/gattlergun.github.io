@@ -1,6 +1,7 @@
 import styles from '@/app/ui/footer.module.scss'
 import Image from 'next/image';
 import Link from 'next/link'
+import { GoTop } from './goTopButton';
 
 export function Footer() {
     const links = [
@@ -45,15 +46,7 @@ export function Footer() {
                             )
                         })}
                     </ul>
-                    <div >
-                        <Image
-                            src='/goTop.svg'
-                            alt='Go Top'
-                            className='svg-footer'
-                            width={48}
-                            height={48}
-                        />
-                    </div>
+                    <GoTop />
                 </div>
             </div>
 

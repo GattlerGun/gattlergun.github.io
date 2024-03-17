@@ -1,0 +1,72 @@
+@import '@/app/vars';
+
+.projectsPage {
+    min-height: 87.2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project {
+    padding: 150px 0;
+    background: #b6bdb7;
+    min-height: 87.2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        background: #cfdad1;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 24px;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__img {      
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    &__border {
+        overflow: hidden;
+        max-height: 480px;
+        border-radius: 24px;
+        border: 2px solid rgba($main-color, 0.7);
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    &__item {
+    }
+    &__img-icon  {
+        margin-bottom: 15px;
+    }
+    &__text {
+        text-align: center;
+    }
+    &__description {
+        margin-bottom: 30px;
+    }
+    &__link {
+        display: block;
+        align-self: end;
+        text-align: right;
+        font-size: 24px;
+        font-weight: 700;
+        transition: all .3s;
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}

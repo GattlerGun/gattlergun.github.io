@@ -4,7 +4,7 @@ import Image from 'next/image'
 export function Project({ title, img, description }:
     {
         title: string,
-        img: any,
+        img: string,
         description: string
     }) {
     return (
@@ -14,7 +14,7 @@ export function Project({ title, img, description }:
                     src={img}
                     alt={title}
                     width={280}
-                    height={160}
+                    height={166}
                 />
             </div>
             <h4 className={styles.projects__itemTitle}>

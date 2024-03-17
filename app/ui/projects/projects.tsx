@@ -1,10 +1,11 @@
 import styles from '@/app/ui/projects/projects.module.scss'
-import { projectsList } from '@/lib/projects/ProjectsList'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { Project } from '@/app/ui/projects/project'
+import { fetchProjects } from '@/lib/data'
 
-export function Projects() {
+export async function Projects() {
+    const projectsList = await fetchProjects();
     return (
         <section className={styles.projects} id='projects'>
             <div className='container'>
@@ -15,7 +16,7 @@ export function Projects() {
                     <div className={styles.projects__items}>
                         {projectsList.slice(0, 3).map((project) => {
                             return (
-                                <Link className={styles.projects__itemLink} key={project.id} href="#">
+                                <Link className={styles.projects__itemLink} key={project.id} href={`/projects/project/${project.id}`}>
                                     <Project
                                         title={project.title}
                                         description={project.description}
@@ -27,7 +28,7 @@ export function Projects() {
                     </div>
                     {
                         projectsList.length > 3 &&
-                        <Link href='#' className={styles.projects__moreLink}>
+                        <Link href='/projects' className={styles.projects__moreLink}>
                             All projects...
                         </Link>
                     }
