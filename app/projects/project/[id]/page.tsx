@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
     const project = await fetchProjectById(id);
+
     return (
         <main>
             <section className={`${styles.project} ${styles.projectsPage}`}>
@@ -46,8 +47,8 @@ export default async function Page({ params }: { params: { id: string } }) {
                         </ul>
                         <p className={styles.project__description}> {project.description} </p>
                         <div className={styles.project__links}>
-                            <Link className={styles.project__link} target="_blank" href={project.gitUrl}>Go to git</Link>
-                            <Link className={styles.project__link} target="_blank" href={project.pageUrl}>Go to project page</Link>
+                            <Link className={styles.project__link} target="_blank" href={project.giturl}>Go to git</Link>
+                            <Link className={styles.project__link} target="_blank" href={project.pageurl}>Go to project page</Link>
                         </div>
 
                     </div>
