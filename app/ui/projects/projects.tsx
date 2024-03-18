@@ -14,7 +14,7 @@ export async function Projects() {
                         My Projects
                     </h2>
                     <div className={styles.projects__items}>
-                        {projectsList.slice(0, 3).map((project) => {
+                        {projectsList?.slice(0, 3).map((project) => {
                             return (
                                 <Link className={styles.projects__itemLink} key={project.id} href={`/projects/project/${project.id}`}>
                                     <Project

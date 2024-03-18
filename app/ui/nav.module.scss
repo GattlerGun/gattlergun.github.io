@@ -1,5 +1,4 @@
-@import '@/app/vars';
-
+@import "@/app/vars";
 
 .nav {
     background: $main-color;
@@ -52,25 +51,25 @@
             opacity: 1;
             visibility: visible;
         }
-        &__linkCurrent {
-            &::before {
-                content: "";
-                position: absolute;
-                opacity: 1;
-                visibility: visible;
-                background: $accent-color;
-                height: 2px;
-                width: 50%;
-                border-radius: 5px;
-                bottom: -5px;
-                right: 0;
-                left: 0;
-                margin: 0 auto;
-                transition: all 1s;
-            }
-        }
     }
 
+    &__linkCurrent {
+        &::before {
+            content: "";
+            position: absolute;
+            opacity: 1;
+            visibility: visible;
+            background: $accent-color;
+            height: 2px;
+            width: 50%;
+            border-radius: 5px;
+            bottom: -5px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            transition: all 1s;
+        }
+    }
     &__link {
         position: relative;
     }

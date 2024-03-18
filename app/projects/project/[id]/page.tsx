@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
     const project = await fetchProjectById(id);
-
     return (
         <main>
             <section className={`${styles.project} ${styles.projectsPage}`}>
@@ -37,17 +36,20 @@ export default async function Page({ params }: { params: { id: string } }) {
                         </div>
                         <ul className={styles.project__list}>
                             {SkillsList.map((skill) => {
-                                if (skill.title !== 'CSS') {
-                                    return (
-                                        <li className={styles.project__item} key={skill.id}>
-                                            <Skill title={skill.title} img={skill.img} />
-                                        </li>
-                                    )
-                                }
-                            })}
+                                return (
+                                    <li className={styles.project__item} key={skill.id}>
+                                        <Skill title={skill.title} img={skill.img} />
+                                    </li>
+                                )
+                            }
+                            )}
                         </ul>
                         <p className={styles.project__description}> {project.description} </p>
-                        <Link className={styles.project__link} target="_blank" href={project.url}>Go to project</Link>
+                        <div className={styles.project__links}>
+                            <Link className={styles.project__link} target="_blank" href={project.giturl}>Go to git</Link>
+                            <Link className={styles.project__link} target="_blank" href={project.pageurl}>Go to project page</Link>
+                        </div>
+
                     </div>
                 </div>
             </section>

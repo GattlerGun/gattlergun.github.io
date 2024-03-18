@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 async function seedUsers(client) {
     try {
         await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-        // Create the "users" table if it doesn't exist
+
         const createTable = await client.sql`
             CREATE TABLE IF NOT EXISTS users (
                 id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -21,7 +21,7 @@ async function seedUsers(client) {
 
         console.log(`Created "users" table`);
 
-        // Insert data into the "users" table
+
         const insertedUsers = await Promise.all(
             users?.map(async (user) => {
                 const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -52,10 +52,11 @@ async function seedProjects(client) {
         const createTable = await client.sql`
             Create TABLE IF NOT EXISTS projects (
                 id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-                title VARCHAR(64) NOT NULL,0
+                title VARCHAR(64) NOT NULL,
                 description VARCHAR(255),
                 img VARCHAR(255) NOT NULL,
-                url VARCHAR(255) NOT NULL,
+                pageUrl VARCHAR(255) NOT NULL,
+                gitUrl VARCHAR(255) NOT NULL,
                 date DATE NOT NULL
             );
         `;
@@ -63,9 +64,9 @@ async function seedProjects(client) {
         const insertedProjects = await Promise.all(
             projects?.map(
                 (project) => client.sql`
-                    INSERT INTO projects (id, title, description, img, url, date)
+                    INSERT INTO projects (id, title, description, img, pageUrl, gitUrl, date)
                     VALUES (${project.id}, ${project.title}, ${project.description}, 
-                        ${project.img}, ${project.url}, ${project.date})
+                        ${project.img}, ${project.pageUrl}, ${project.gitUrl}, ${project.date})
                     ON CONFLICT (id) DO NOTHING;
                 `,
             ),
@@ -76,7 +77,7 @@ async function seedProjects(client) {
             projects: insertedProjects,
         }
     } catch (error) {
-        console.error('Error seeding users:', error);
+        console.error('Error seeding projects:', error);
         throw error;
     };
 }

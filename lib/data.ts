@@ -24,7 +24,8 @@ export async function fetchProjectById(id: string) {
                 title,
                 description,
                 img,
-                url
+                pageUrl,
+                gitUrl
             FROM projects
             WHERE projects.id = ${id};
         `;  
@@ -32,6 +33,7 @@ export async function fetchProjectById(id: string) {
         const project = data.rows.map((project) => ({
             ...project
         }));
+
         return project[0];
 
     } catch (error) {

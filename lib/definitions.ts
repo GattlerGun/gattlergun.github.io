@@ -10,5 +10,6 @@ export type Project = {
     title: string;
     description: string;
     img: string;
-    url: string;
+    pageUrl: string;
+    gitUrl: string;
 }

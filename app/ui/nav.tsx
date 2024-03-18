@@ -43,10 +43,9 @@ export function Nav() {
                         </Link>
                         <ul className={listClass}>
                             {links.map((link) => {
-                                const linkClass = pathname === link.href ? styles.nav__linkCurrent : styles.nav__link
                                 return (
                                     <li className={styles.nav__item} key={link.name}>
-                                        <Link href={link.href} className={linkClass}
+                                        <Link href={link.href} className={pathname === link.href ? styles.nav__linkCurrent : styles.nav__link}
                                             onClick={() => { setMenuActive(false) }}
                                         >
                                             {link.name}
