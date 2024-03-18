@@ -6,7 +6,7 @@ import { Skill } from "./skill";
 
 export function Skills() {
     return (
-        <section className={styles.about}>
+        <section className={styles.about} id="skills">
             <div className="container">
                 <div className={styles.about__inner}>
                     <h2 className={clsx(styles.about__title, 'title')}> My Skills</h2>

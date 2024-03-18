@@ -4,9 +4,9 @@ import Image from "next/image";
 import styles from '@/app/ui/nav.module.scss'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import { Burger } from "@/app/ui/burger";
 import { useState } from "react";
+
 
 export function Nav() {
     const links = [
@@ -15,17 +15,14 @@ export function Nav() {
             href: "/",
         },
         {
-            name: "Skills",
-            href: "#",
-        },
-        {
-            name: "About",
-            href: "/about",
+            name: "Projects",
+            href: "/projects",
         }
     ];
     const pathname = usePathname();
     const [menuActive, setMenuActive] = useState(false);
     const listClass = menuActive ? `${styles.nav__listOpen} ${styles.nav__list}` : styles.nav__list;
+    const scrollToElement = require('scroll-to-element');
 
     return (
         <>
@@ -53,7 +50,9 @@ export function Nav() {
                                     </li>
                                 )
                             })}
-
+                            <li className={styles.nav__item} key='skills'>
+                                <Link href='/#skills' className={styles.nav__link} onClick={() => {setMenuActive(false); scrollToElement('#skills', {offset: -100, ease: 'linear'})}}>Skills</Link>
+                            </li>
                         </ul>
                         <Burger active={menuActive} func={() => {
                             setMenuActive(!menuActive)
