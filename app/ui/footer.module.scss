@@ -16,12 +16,17 @@
 
     &__navItem {
         padding: 0 20px;
+        transition: all .3s ease-in;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__navLink {
-        transition: all .3s;
+        transition: all .3s ease-in;
         &:hover {
             color: $accent-color;
+
         }
     }
 
