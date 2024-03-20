@@ -6,7 +6,7 @@ import { Projects } from "./ui/projects/projects";
 
 export default function Page() {
   return (
-    <main>
+    <main className="main">
       <Header />
       <Skills />
       <Projects />
