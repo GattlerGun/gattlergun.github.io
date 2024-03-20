@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     const projectsList = await fetchProjects();
     return (
-        <section className={styles.projects} id='projects'>
+        <section className={`${styles.projects} ${styles.projectsPage}`} id='projects'>
         <div className='container'>
             <div className={styles.projects__inner}>
                 <h2 className={clsx(styles.projects__title, 'title')}>

@@ -88,6 +88,9 @@
 }
 @media(max-width: 800px) {
     .projects { 
+        padding: 60px 0;
+    }
+    .projectsPage {
         padding: 150px 0 60px;
     }
     .projects__title {
