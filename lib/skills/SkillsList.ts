@@ -4,6 +4,7 @@ import scssIcon from './/scss.svg';
 import gulpIcon from './/gulp.svg';
 import bemIcon from './/bem.svg';
 import jsIcon from './/js.svg';
+import nextjsIcon from './/nextjs.svg';
 
 export const SkillsList = [
     {
@@ -35,5 +36,10 @@ export const SkillsList = [
         id: '5',
         title: 'JS',
         img: jsIcon
+    },
+    {
+        id: '6',
+        title: 'NEXT.JS',
+        img: nextjsIcon
     },
 ]
